@@ -1,0 +1,148 @@
+{
+    "theme": {
+        "name": "Midnight Blue Pro",
+        "version": "1.2.0",
+        "mode": "dark",
+        "colors": {
+            "primary": {
+                "50": "#e3f2fd",
+                "100": "#bbdefb",
+                "200": "#90caf9",
+                "300": "#64b5f6",
+                "400": "#42a5f5",
+                "500": "#2196f3",
+                "600": "#1e88e5",
+                "700": "#1976d2",
+                "800": "#1565c0",
+                "900": "#0d47a1"
+            },
+            "secondary": {
+                "50": "#f3e5f5",
+                "100": "#e1bee7",
+                "200": "#ce93d8",
+                "300": "#ba68c8",
+                "400": "#ab47bc",
+                "500": "#9c27b0",
+                "600": "#8e24aa",
+                "700": "#7b1fa2",
+                "800": "#6a1b9a",
+                "900": "#4a148c"
+            },
+            "success": "#4caf50",
+            "warning": "#ff9800",
+            "danger": "#f44336",
+            "info": "#00bcd4",
+            "light": "#f5f5f5",
+            "dark": "#212121",
+            "background": {
+                "default": "#121212",
+                "paper": "#1e1e1e",
+                "elevated": "#2c2c2c"
+            },
+            "text": {
+                "primary": "#ffffff",
+                "secondary": "#b0bec5",
+                "disabled": "#78909c",
+                "hint": "#546e7a"
+            }
+        },
+        "typography": {
+            "fontFamily": {
+                "sans": [
+                    "Inter",
+                    "Roboto",
+                    "Helvetica",
+                    "Arial",
+                    "sans-serif"
+                ],
+                "serif": [
+                    "Merriweather",
+                    "Georgia",
+                    "serif"
+                ],
+                "mono": [
+                    "JetBrains Mono",
+                    "Fira Code",
+                    "Courier Prime",
+                    "monospace"
+                ]
+            },
+            "fontSize": {
+                "xs": "0.75rem",
+                "sm": "0.875rem",
+                "base": "1rem",
+                "lg": "1.125rem",
+                "xl": "1.25rem",
+                "2xl": "1.5rem",
+                "3xl": "1.875rem",
+                "4xl": "2.25rem",
+                "5xl": "3rem"
+            },
+            "fontWeight": {
+                "thin": 100,
+                "light": 300,
+                "regular": 400,
+                "medium": 500,
+                "semibold": 600,
+                "bold": 700,
+                "black": 900
+            }
+        },
+        "spacing": {
+            "px": "1px",
+            "0": "0",
+            "0.5": "0.125rem",
+            "1": "0.25rem",
+            "1.5": "0.375rem",
+            "2": "0.5rem",
+            "2.5": "0.625rem",
+            "3": "0.75rem",
+            "4": "1rem",
+            "5": "1.25rem",
+            "6": "1.5rem",
+            "8": "2rem",
+            "10": "2.5rem",
+            "12": "3rem",
+            "16": "4rem",
+            "20": "5rem",
+            "24": "6rem"
+        },
+        "borderRadius": {
+            "none": "0",
+            "sm": "0.125rem",
+            "default": "0.25rem",
+            "md": "0.375rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+        },
+        "shadows": {
+            "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+            "default": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+            "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+            "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+            "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+        },
+        "components": {
+            "button": {
+                "borderRadius": "md",
+                "paddingX": "4",
+                "paddingY": "2",
+                "fontWeight": "medium"
+            },
+            "input": {
+                "borderRadius": "md",
+                "borderColor": "gray.300",
+                "focusBorderColor": "primary.500"
+            },
+            "card": {
+                "borderRadius": "lg",
+                "padding": "6",
+                "shadow": "md",
+                "backgroundColor": "background.paper"
+            }
+        }
+    }
+}

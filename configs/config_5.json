@@ -1,0 +1,141 @@
+{
+    "api": {
+        "version": "v1",
+        "baseUrl": "https://api.autoweave.io",
+        "timeout": 30000,
+        "retry": {
+            "retries": 3,
+            "factor": 2,
+            "minTimeout": 1000,
+            "maxTimeout": 10000,
+            "randomize": true
+        },
+        "endpoints": {
+            "auth": {
+                "login": "/auth/login",
+                "logout": "/auth/logout",
+                "refresh": "/auth/refresh",
+                "register": "/auth/register",
+                "forgotPassword": "/auth/forgot-password",
+                "resetPassword": "/auth/reset-password",
+                "verifyEmail": "/auth/verify-email"
+            },
+            "users": {
+                "me": "/users/me",
+                "updateProfile": "/users/me/profile",
+                "changePassword": "/users/me/password",
+                "get": "/users/:id",
+                "list": "/users",
+                "create": "/users",
+                "delete": "/users/:id",
+                "roles": "/users/:id/roles"
+            },
+            "projects": {
+                "list": "/projects",
+                "get": "/projects/:id",
+                "create": "/projects",
+                "update": "/projects/:id",
+                "delete": "/projects/:id",
+                "members": "/projects/:id/members",
+                "invitations": "/projects/:id/invitations"
+            },
+            "files": {
+                "upload": "/files/upload",
+                "download": "/files/download/:id",
+                "delete": "/files/:id",
+                "list": "/files"
+            },
+            "webhooks": {
+                "list": "/webhooks",
+                "create": "/webhooks",
+                "update": "/webhooks/:id",
+                "delete": "/webhooks/:id",
+                "test": "/webhooks/:id/test"
+            }
+        },
+        "keys": [
+            {
+                "id": "key_28475928347592834",
+                "name": "Production API Key",
+                "prefix": "pk_live_",
+                "created": "2023-01-01T00:00:00Z",
+                "expires": null,
+                "scopes": [
+                    "read",
+                    "write",
+                    "admin"
+                ],
+                "lastUsed": "2024-05-20T14:30:00Z",
+                "status": "active"
+            },
+            {
+                "id": "key_93847593847593847",
+                "name": "Staging API Key",
+                "prefix": "pk_test_",
+                "created": "2023-01-15T00:00:00Z",
+                "expires": "2025-01-15T00:00:00Z",
+                "scopes": [
+                    "read",
+                    "write"
+                ],
+                "lastUsed": "2024-05-19T10:15:00Z",
+                "status": "active"
+            },
+            {
+                "id": "key_10293847561029384",
+                "name": "Development API Key",
+                "prefix": "pk_dev_",
+                "created": "2024-02-01T00:00:00Z",
+                "expires": null,
+                "scopes": [
+                    "read"
+                ],
+                "lastUsed": "2024-05-20T16:45:00Z",
+                "status": "revoked"
+            }
+        ]
+    },
+    "thirdParty": {
+        "aws": {
+            "region": "us-east-1",
+            "s3": {
+                "bucket": "autoweave-assets",
+                "publicUrl": "https://assets.autoweave.io",
+                "uploadPath": "uploads/${year}/${month}/${day}",
+                "acl": "private"
+            },
+            "ses": {
+                "fromEmail": "no-reply@autoweave.io",
+                "replyTo": "support@autoweave.io",
+                "limitPerSecond": 14
+            },
+            "sqs": {
+                "queueUrl": "https://sqs.us-east-1.amazonaws.com/123456789012/autoweave-jobs"
+            },
+            "lambda": {
+                "imageHandler": "autoweave-image-processor",
+                "pdfGenerator": "autoweave-pdf-generator"
+            }
+        },
+        "google": {
+            "analytics": {
+                "measurementId": "G-XXXXXXXXXX",
+                "containerId": "GTM-XXXXXXX"
+            },
+            "maps": {
+                "apiKey": "AIzaSyDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "libraries": [
+                    "places",
+                    "geometry"
+                ]
+            }
+        },
+        "sentry": {
+            "dsn": "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@o000000.ingest.sentry.io/0000000",
+            "environment": "production",
+            "tracesSampleRate": 0.1,
+            "replaysSessionSampleRate": 0.1,
+            "replaysOnErrorSampleRate": 1.0
+        }
+    }
+}

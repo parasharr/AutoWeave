@@ -5,7 +5,7 @@ import { clients, products } from "../lib/constant";
 import { InfiniteMovingCards } from "../components/global/infinite-moving-cards";
 import { HeroParallax } from "../components/global/connect-parallax";
 import { LampComponent } from "../components/global/lamp";
-import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-cards";
 import { CheckIcon } from "lucide-react";
 
 export default function Home() {

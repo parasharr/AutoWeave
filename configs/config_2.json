@@ -1,0 +1,103 @@
+{
+    "database": {
+        "primary": {
+            "driver": "postgres",
+            "host": "db-primary.autoweave.internal",
+            "port": 5432,
+            "database": "autoweave_prod",
+            "username": "autoweave_app",
+            "password": "encrypted_password_placeholder_v2",
+            "schema": "public",
+            "ssl": true,
+            "pool": {
+                "min": 10,
+                "max": 100,
+                "idleTimeoutMillis": 30000,
+                "connectionTimeoutMillis": 2000,
+                "acquireTimeoutMillis": 20000,
+                "propagateCreateError": false
+            },
+            "replication": {
+                "readReplicas": [
+                    {
+                        "host": "db-replica-01.autoweave.internal",
+                        "port": 5432,
+                        "username": "autoweave_ro",
+                        "password": "encrypted_password_placeholder_ro"
+                    },
+                    {
+                        "host": "db-replica-02.autoweave.internal",
+                        "port": 5432,
+                        "username": "autoweave_ro",
+                        "password": "encrypted_password_placeholder_ro"
+                    }
+                ],
+                "strategy": "round_robin"
+            }
+        },
+        "cache": {
+            "driver": "redis",
+            "nodes": [
+                {
+                    "host": "redis-cluster-01.autoweave.internal",
+                    "port": 6379
+                },
+                {
+                    "host": "redis-cluster-02.autoweave.internal",
+                    "port": 6379
+                },
+                {
+                    "host": "redis-cluster-03.autoweave.internal",
+                    "port": 6379
+                }
+            ],
+            "password": "encrypted_redis_password",
+            "db": 0,
+            "keyPrefix": "aw_v2:",
+            "ttl": {
+                "short": 60,
+                "medium": 3600,
+                "long": 86400,
+                "session": 1800
+            },
+            "cluster": true,
+            "sentinel": {
+                "enabled": false,
+                "masterName": "mymaster"
+            }
+        },
+        "search": {
+            "driver": "elasticsearch",
+            "nodes": [
+                "http://es-node-01.autoweave.internal:9200",
+                "http://es-node-02.autoweave.internal:9200",
+                "http://es-node-03.autoweave.internal:9200"
+            ],
+            "indexPrefix": "autoweave_prod_",
+            "shards": 5,
+            "replicas": 2,
+            "timeout": "30s",
+            "requestTimeout": 30000,
+            "maxRetries": 3,
+            "sniffOnStart": true
+        },
+        "influx": {
+            "host": "influxdb.autoweave.internal",
+            "port": 8086,
+            "protocol": "http",
+            "database": "metrics",
+            "username": "metrics_writer",
+            "password": "metrics_password",
+            "retentionPolicy": "30d"
+        }
+    },
+    "migrations": {
+        "directory": "./migrations",
+        "tableName": "knex_migrations",
+        "extension": "js",
+        "loadExtensions": [
+            ".js"
+        ],
+        "stub": "./migrations/stub.js.stub"
+    }
+}

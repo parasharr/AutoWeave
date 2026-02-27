@@ -8,7 +8,7 @@ type Props = {
 
 const layout = ({ children }: Props) => {
     return (
-        <div className="flex overflow-hidden h-screen">
+        <div className="flex min-h-screen">
             <Sidebar />
             <div className="w-full pl-20 transition-all duration-300">
                 <InfoBar />

@@ -1,0 +1,45 @@
+/* Container Styling */
+.uploadcareContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadcareContainer :global(uc-file-uploader) {
+    --uc-primary-color: #8b5cf6;
+    --uc-primary-color-hover: #7c3aed;
+
+    --uc-background-color: #111111;
+    --uc-panel-background: #1c1c1e;
+
+    --uc-text-color: #ffffff;
+    --uc-muted-color: #9ca3af;
+
+    --uc-border-color: rgba(255, 255, 255, 0.1);
+    --uc-border-radius: 16px;
+}
+
+/* Fix the enormous SVG icon issue */
+.uploadcareContainer :global(svg) {
+    max-width: 28px !important;
+    max-height: 28px !important;
+}
+
+/* Styling the button directly */
+.uploadcareContainer :global(uc-file-uploader)::part(button) {
+    background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.uploadcareContainer :global(uc-file-uploader)::part(button):hover {
+    background: linear-gradient(to right, rgba(168, 85, 247, 0.4), rgba(59, 130, 246, 0.4));
+    border-color: rgba(168, 85, 247, 0.6);
+    transform: translateY(-1px);
+}
